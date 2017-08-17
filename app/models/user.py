@@ -43,7 +43,7 @@ class User(object):
 			return self.shoppinglists
 		elif name not in self.shoppinglists:
 			return False
-
+		
 	def edit_shoppinglist(self,cart,name,item_number):
 		"""This method edits the shoppinglist specified"""
 		if cart in self.shoppinglists:
