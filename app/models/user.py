@@ -1,5 +1,5 @@
 
-from .shoppinglist import shoppinglist
+from .shoppinglist import ShoppingList
 class User(object):
 	"""
 		The user class implements the functionality of a user on the shoppinglist application
@@ -32,7 +32,7 @@ class User(object):
 
 	def add_shoppinglist(self,name,item_number):
 		""" This method adds a new shoppinglist"""
-		self.shoppinglists[name]=shoppinglist(name,item_number)
+		self.shoppinglists[name]=ShoppingList(name,item_number)
 
 	def view_shoppinglist(self,name=""):
 		"""This method returns a dictionary of cart list elements"""
