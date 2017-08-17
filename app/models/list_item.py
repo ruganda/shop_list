@@ -4,7 +4,7 @@ class ListItem(object):
 		self.name=name
 		self.complete_status=False
 		self.date_completed=""
-
+		
 	def show_info(self):
 		return {"name":self.name,"complete_status":self.complete_status}
 
