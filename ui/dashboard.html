@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style/materialize/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="style/custom.css">
+	<link rel="stylesheet" type="text/css" href="style/dashboard.css">
+	<script type="text/javascript" src="javascript/jquery/jquery-3.2.1.js"></script>
+	
+	<title>FANTASY SHOPPING</title>
+</head>
+<body>
+<div class="navbar-fixed">
+<nav>
+	<div class="nav-wrapper">
+		<div class="container">
+		<a href="#" class="brand-logo">FANTASY SHOPPING</a>
+		<ul id="topNave" class="right hide-on-med-and-down">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Logout</a></li>
+		</ul>
+		</div>
+	</div>
+</nav>
+</div>
+<div class="container">
+		<div class="row" id="bklist_controller">
+			<div class="col s2">
+				<button class="waves-effect waves-light btn" data-target="activityModal">Add Activity</button>
+			</div>	
+			
+			<div class="col s4">
+				<button class=" waves-effect waves-light btn col s2 flat">All</button>
+				<button class="btn waves-effect waves-light col s5">Pending</button>
+				<button class="btn waves-effect waves-light col s5">Archieved</button>
+			</div>			
+
+			<div class="search-wrapper card col s6 right" id="searchBar">
+	            <input id="search" placeholder="search">
+	            <!--<i class="material-icons">search</i>-->
+	            <div class="search-results"></div>
+          </div>
+
+		</div>
+
+		<div class="card">
+		<div class="row" id="demoArea">
+				<img src="images/1.jpg" class="col s9" id="demoImg"/>
+				<div class="col s3">
+					<div id="dates_area" class="col s12">
+						<div>
+							Entered On:
+						</div>
+						<div>
+							Archieved On:
+						</div>
+					</div>
+
+					<div class="col s12" id="displayArea">
+						<p id="story">
+
+						</p>
+					</div>
+
+					<div class="col s12" id="actions">
+						<button class="btn col s4">Edit</button>
+						<button class="btn col s4">Done</button>
+						<button class="btn col s4">Delete</button>
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s6"><h5>My Shopping List</h5></div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<div class="card bk_card">
+			<div class="card-image">
+				<img src="shop2.jpg"/>
+			</div>
+			<span class="card-title">
+				Funiture
+			</span>
+
+			<div class="card-content">
+				
+			</div>
+		</div>
+		</div>
+
+		<div class="col s3">
+			<div class="card bk_card">
+			<div class="card-image">
+				<img src="image1.jpg"/>
+			</div>
+			<span class="card-title">
+				Funiture
+			</span>
+
+			<div class="card-content">
+				
+			</div>
+		</div>
+		</div>
+
+		<div class="col s3">
+			<div class="card bk_card">
+			<div class="card-image">
+				<img src="images/3.jpg"/>
+			</div>
+			<span class="card-title">
+				Gadgets
+			</span>
+
+			<div class="card-content">
+				
+			</div>
+		</div>
+		</div>
+
+		<div class="col s3">
+			<div class="card bk_card">
+			<div class="card-image">
+				<img src="images/1.jpg"/>
+			</div>
+			<span class="card-title">
+				Sky diving
+			</span>
+
+			<div class="card-content">
+				
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+
+
+	<form class="modal" id="activityModal">
+		<h4 class="modal-header center">
+			Add Activity
+		</h4>
+
+		<div class="modal-content">
+			<div class="input-field">
+				<input type="text" name="name" id="name" class="validate">
+				<label for="email">Name of activity</label>				
+			</div>
+
+			<div class="input-field">
+				<textarea name="story"></textarea>
+				<label for="story">Story</label>
+			</div>
+
+			<div class="file-field input-field">
+					<div class="btn">
+						  <span>Image</span>
+						  <input type="file">
+					</div>
+					<div class="file-path-wrapper">
+					<input class="file-path validate" type="text">
+				</div>
+			</div>
+
+		<div class="input-field">
+			<button class="btn">Add</button>
+		</div>
+	</form>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript" src="style/materialize/js/materialize.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".modal").modal({
+			StartingTop:'10%'
+		});
+
+
+		/*$(".pickdate").pickadate({
+			selectMonths:true,
+			selectYears:100
+		});*/
+	});
+</script>
+</html>

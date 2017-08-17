@@ -1,0 +1,159 @@
+.materialize_jumbo{
+	width: 100%;
+	height:450px;
+	position: relative;
+}
+
+.btn{
+	border-radius: 0px !important;
+}
+
+.materialize_jumbo img{
+	width:100%;
+	height:100%;
+}
+
+.materialize_jumbo .btns{
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+}
+
+#loginModal{
+	width: 400px !important;
+}
+
+#registerModal{
+	width: 500px !important;
+}
+
+.modal-header{
+	margin-top: 10px !important;
+}
+
+#search_form{
+	height: 50px !important;
+}
+
+#search_form .input-field{
+	margin-top: 0px !important;
+}
+
+#mainCarousel{
+	width: 100% !important;
+	height: 100vh !important;
+	position: relative;
+	margin: 0px !important;
+	overflow: hidden !important;
+}
+
+#mainNav{
+	position:absolute !important;
+	top:0px !important;
+}
+
+.genie-carousel{
+	width: 100% !important;
+	height: 100vh !important;
+}
+
+.genie-carousel-item{
+	width: 100% !important;
+	height: 100vh !important;
+	display: inline !important;
+	float: left;
+}
+
+.genie-carousel-item img{
+	width: 100% !important;
+	height: 100% !important;
+}
+
+#home_nav{
+	background-color: transparent;
+}
+
+#forms{
+	position: absolute;
+	left: 40%;
+	width: 390px !important;
+	height: 441;
+	top:25%;
+	z-index: 100 !important;
+	padding: 20px !important;
+	perspective: 1000px;
+}
+
+.translucent{
+	background-color: rgba(255,255,255,0.5) !important;
+}
+
+#forms form{
+	margin-left: auto;
+	margin-right: auto;
+	padding:20px !important;
+	border-radius: 3px;
+}
+
+.note{
+	margin-top: 50px !important;
+	position: relative;
+	height: 40px !important;
+	border-radius: 3px !important;
+	font-size: 13px !important;
+	padding: 10px !important;
+}
+
+#forms label{
+	padding-left: 10px !important;
+	height: 25px !important;
+}
+
+#forms h5{
+	text-transform: uppercase;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	color: #faffbd;
+}
+
+#forms form input,#activityModal form input{
+	z-index: 300px !important;
+	height: 35px !important;
+	padding-left: 10px !important;
+	background-color: #faffbd;
+	color:black;
+}
+
+#loginForm_area{
+	height: auto;
+}
+
+/*flip speed */
+.flipper{
+	transition: 0.6s;
+	position: relative;
+	transform-style: preserve-3d;
+}
+
+/*add backs of panes*/
+#loginForm_area, #registerForm_area{
+	backface-visibility: hidden;
+	position: absolute !important;
+	top: 0px !important;
+	left: 0px !important;
+}
+
+/*place front pane above back*/
+#loginForm_area{
+	transform: rotateY(0deg);
+}
+
+/*initially hide back pane*/
+#registerForm_area{
+	transform: rotateY(180deg);
+}
+
+.flip{
+	transform: rotateY(180deg);
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style/materialize/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="style/custom.css">
+	<script type="text/javascript" src="javascript/jquery/jquery-3.2.1.js"></script>
+	
+	<title>FANTASY SHOPPING</title>
+</head>
+<body>
+<div>
+	<div class="genie-carousel">
+	    <div class="navbar-fixed" id="mainNav">
+			<nav id="home_nav">
+				<div class="nav-wrapper">
+					<div class="container">
+					<a href="#" class="brand-logo">FANTASY SHOPPING</a>
+					<ul id="topNave" class="right hide-on-med-and-down">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<div id="forms" class="row">
+			<div class="flipper">
+				<div id="loginForm_area">
+					<form class="col s12 translucent" action="dashboard.html">
+						<h5 class="col s12 center">
+							Login
+						</h5>
+						<div class="input-field col s12">
+							<input type="text" name="email"/>
+							<label>Email</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="password" name="password"/>
+							<label for="password">Password</label>
+						</div>
+						
+						<div class="input-field center col s12">
+							<button class="btn">Login</button>
+						</div>
+					</form>
+
+					<p class="note translucent center white col s12">
+						Don't have an account? 
+					</p>
+					<div class="col s12 center">
+						<button class="btn flip_me">
+							Register
+						</button>
+					</div>
+				</div>
+
+				<div id="registerForm_area">
+					<form class="col s12 translucent" action="dashboard.html">
+						<h5 class="col s12 center">
+							Register
+						</h5>
+						<div class="input-field col s12">
+							<input type="text" name="email"/>
+							<label>Email</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="text" name="first_name"/>
+							<label for="first_name">First Name</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="text" name="last_name"/>
+							<label for="last_name">Last Name</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="password" name="password"/>
+							<label for="password">Password</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="password" name="password_repeat"/>
+							<label for="password_repeat">Repeat password</label>
+						</div>
+						
+						<div class="input-field center col s12">
+							<button class="btn">Register</button>
+						</div>
+					</form>
+
+					<p class="note translucent center white col s12">
+						Already have an account? 
+					</p>
+					<div class="col s12 center">
+						<button class="btn flip_me">
+							Login
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="carousel carousel-slider center">
+		    <div class="carousel-item genie-carousel-item" href="#one!">
+		      <img src="images/1."/>
+		    </div>
+
+		    <div class="carousel-item genie-carousel-item" href="#two!">
+		      <img src="images/2.j"/>
+		    </div>
+		    <div class="carousel-item genie-carousel-item" href="#three!">
+		      <img src="images/3.jp"/>
+		    </div>
+		    <div class="carousel-item genie-carousel-item" href="#four!">
+		      <img src="images/1.jpg"/>
+		    </div>
+		 </div>
+  </div>
+</div>
+
+
+</body>
+<script type="text/javascript" src="style/materialize/js/materialize.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".modal").modal({
+			StartingTop:'10%'
+		});
+
+		 $('.carousel.carousel-slider').carousel({fullWidth: true});
+		 setInterval(function(){
+		 	$('.carousel.carousel-slider').carousel('next');},20000);
+
+		 $(".flip_me").click(function(){
+		 	$(".flipper").toggleClass("flip");
+		 });
+		/*$(".pickdate").pickadate({
+			selectMonths:true,
+			selectYears:100
+		});*/
+	});
+</script>
+</html>

@@ -1,7 +1,0 @@
-# shop_list app
-The challenge of keeping track of shopping items is a need for many individuals that requires an innovative and robust solution that will allow them to remember and share the shopping lists with others 
- Shop_list app
- helps indivuals keep track of their shopping list.
-new users can signup to the application.
-A user can login , then acceses a window where he can access his items on the list.
-a user can add  or delete items from the list.
