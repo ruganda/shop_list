@@ -9,9 +9,6 @@ a user can add  or delete items from the list.
 
 [![Build Status](https://travis-ci.org/ruganda/shop_list.svg?branch=master)](https://travis-ci.org/ruganda/shop_list) 
 [![Coverage Status](https://coveralls.io/repos/ruganda/shop_list/badge.svg?branch=master)](https://coveralls.io/r/ruganda/shop_list?branch=master)
-
-https://img.shields.io/travis/ruganda/shop_list.svg
-https://img.shields.io/travis/ruganda/shop_list/master.svg
 [![Code Climate](https://codeclimate.com/github/cloudfoundry/membrane.png)](https://codeclimate.com/github/cloudfoundry/membrane)
   [![Build Status](https://travis-ci.org/cloudfoundry/membrane.png)](https://travis-ci.org/cloudfoundry/membrane)
   
