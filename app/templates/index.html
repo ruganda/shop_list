@@ -1,106 +1,181 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    
-<meta charset="UTF-8">
-<title>Shoplist</title>
-<link rel="stylesheet" type="text/css" href="file:///C:/Users/HP/Desktop/assets/style.css"/>
-<link rel="stylesheet" type="text/css" href="file:///C:/Users/HP/Desktop/assets/animate.css"/>
-<link rel="shortcut icon" href="file:///C:/Users/HP/Desktop/assets/icon.png">
-<link rel="stylesheet" type="text/css" href="file:///C:/Users/HP/Desktop/assets/font-awesome.css"/>
-<link rel="stylesheet" type="text/css" href="file:///C:/Users/HP/Desktop/assets/font-awesome.min.css"/>
-<script src='file:///C:/Users/HP/Desktop/assets/jquery-1.11.3.min.js'></script>
-<script src='file:///C:/Users/HP/Desktop/assets/wow.js'></script>
-<script type="text/javascript" src="file:///C:/Users/HP/Desktop/assets/time.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/style/materialize/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="static/style/custom.css">
+	<script type="text/javascript" src="static/javascript/jquery/jquery-3.2.1.js"></script>
+	
+	<title>Fantasy Shopping</title>
 </head>
-<link rel="stylesheet" type="text/css" href="file:///C:/Users/HP/Desktop/assets/dc_parallax.css" />
-<script type="text/javascript" src="file:///C:/Users/HP/Desktop/assets/jquery.min.js"></script>
-<script type="text/javascript" src="file:///C:/Users/HP/Desktop/assets/modernizr.custom.js"></script>
-<script type="text/javascript" src="file:///C:/Users/HP/Desktop/assets/jquery.cslider.js"></script>
-
 <body>
-<div id="main-header">
-	<div id="sub-header">
-    	<div class="logo">
-        	<a href="?a=home"><img src="file:///C:/Users/HP/Desktop/assets/logo.png"/></a>
-        </div>
-        <div class="header-right">
-           <div class="header-rightup">
-                <div class="upone">
-                	<p></i> Server time : <span id="date_time"></span></p>
-                </div>
-                <div class="upone">
-                	<p></i> Email : admin@Shoplist.com</p>
-                </div>
-                 <div class="upone">
-                	<p></i> Phone :+256779850746</p>
-                </div>
-            </div>
-            <div class="header-rightdown">
-            	<div class="cert">
-                <p> <a target="_blank""><img src="images/cert.png"><font color="#FFFFFF"></font></a></p>
-                </div>
+<div>
+	<div class="genie-carousel">
+	    <div class="navbar-fixed" id="mainNav">
+			<nav id="home_nav">
+				<div class="nav-wrapper">
+					<div class="container">
+					<a href="#" class="brand-logo">Fantasy Shopping</a>
+					<ul id="topNave" class="right hide-on-med-and-down">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
 
-                <div class="head-sign">
-                    <div class="sign-one">
-                    	<div class="sign-tittle">
-                        	<p>Member Access</p>
-                        </div>
-                        <div class="sign-box">
-                        	<a href="?a=login" class="a-link">Sign In</a>
-                        </div>
-                    </div>
-                    <div class="sign-one">
-                    	<div class="sign-tittle">
-                        	<p>Account Opening</p>
-                        </div>
-                        <div class="sign-box">
-                        	<a href="?a=signup" class="a-link">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<div id="main-slider">
-    <div id="sub-slider">
-<div class="main-login">
-             <div class="info-one">
-                <input type="text" placeholder="Username" name="username" value="">
-             </div>
-             <div class="info-one">
-                <input type="Password" placeholder="Password" name="password" value="">
-             </div>
-             <div class="forgot-login">
-                 <div class="forgot-pass">
-                      <a href="?a=forgot_password">You Forgot Password?</a>
-                 </div>
-                <div class="login-now">
-                      <input type="submit" value="LOG IN">
-                </div>
-            </div>
-        </div>
-<div class="dc_clear"></div> <!-- line break/clear line -->
+		<div id="forms" class="row">
+			<div class="flipper">
+				<div id="loginForm_area">
+					<form class="col s12 translucent" method="POST" id="login_form">
+						<h5 class="col s12 center">
+							Login
+						</h5>
+						<div class="input-field col s12">
+							<input type="text" name="email"/>
+							<label>Email</label>
+						</div>
 
-    </div>
+						<div class="input-field col s12">
+							<input type="password" name="password"/>
+							<label for="password">Password</label>
+						</div>
+						
+						<div class="input-field center col s12">
+							<button class="btn">Login</button>
+						</div>
+					</form>
+
+					<p class="note translucent center white col s12">
+						Don't have an account? 
+					</p>
+					<div class="col s12 center">
+						<button class="btn flip_me">
+							Register
+						</button>
+					</div>
+				</div>
+
+				<div id="registerForm_area">
+					<form class="col s12 translucent" method="POST" id="reg_form">
+						<h5 class="col s12 center">
+							Register
+						</h5>
+						<div class="input-field col s12">
+							<input type="text" name="email"/>
+							<label>Email</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="text" name="first_name"/>
+							<label for="first_name">First Name</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="text" name="last_name"/>
+							<label for="last_name">Last Name</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="password" name="password"/>
+							<label for="password">Password</label>
+						</div>
+
+						<div class="input-field col s12">
+							<input type="password" name="password_repeat"/>
+							<label for="password_repeat">Repeat password</label>
+						</div>
+						
+						<div class="input-field center col s12">
+							<button class="btn">Register</button>
+						</div>
+					</form>
+
+					<p class="note translucent center white col s12">
+						Already have an account? 
+					</p>
+					<div class="col s12 center">
+						<button class="btn flip_me">
+							Login
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="carousel carousel-slider center">
+		    <div class="carousel-item genie-carousel-item" href="#one!">
+		      <img src="static/images/1.jpg"/>
+		    </div>
+
+		    <div class="carousel-item genie-carousel-item" href="#two!">
+		      <img src="static/images/2.jpg"/>
+		    </div>
+		    <div class="carousel-item genie-carousel-item" href="#three!">
+		      <img src="static/images/3.jpg"/>
+		    </div>
+		    <div class="carousel-item genie-carousel-item" href="#four!">
+		      <img src="static/images/1.jpg"/>
+		    </div>
+		 </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<br>
-<div id="main-down">
-<div id="sub-down">
-<div class="reserved">
-<p>© Copyright 2017 - Fancy Shoplist, All rights reserved.</p>
-</div>
-</div>
-</div>
+
 
 </body>
-</body>
-</html>  
+<script type="text/javascript" src="static/style/materialize/js/materialize.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".modal").modal({
+			StartingTop:'10%'
+		});
+
+		 $('.carousel.carousel-slider').carousel({fullWidth: true});
+		 setInterval(function(){
+		 	$('.carousel.carousel-slider').carousel('next');},20000);
+
+		 $(".flip_me").click(function(){
+		 	$(".flipper").toggleClass("flip");
+		 });
+
+		 $("#reg_form").submit(function(event){
+		 		event.preventDefault();
+		 		var data=$(this).serialize()
+		 		alert(data)
+		 		$.ajax({
+		 			"type":"POST",
+		 			"dataType":"json",
+		 			"url":"/api/register",
+		 			 "data":data,
+		 			success: function(res){
+		 				if(res['status']=="success"){
+		 					window.location.href="/dashboard"
+		 				}
+		 			}
+		 		});
+		 	})
+
+		 $("#login_form").submit(function(event){
+		 	event.preventDefault();
+		 		var data=$(this).serialize()
+		 		alert(data)
+		 		$.ajax({
+		 			"type":"POST",
+		 			"dataType":"json",
+		 			"url":"/api/login",
+		 			 "data":data,
+		 			success: function(res){
+		 				if(res['status']=="success"){
+		 					window.location.href="/dashboard"
+		 				}
+		 			}
+		 		});
+		 })
+		/*$(".pickdate").pickadate({
+			selectMonths:true,
+			selectYears:100
+		});*/
+	});
+</script>
+</html>

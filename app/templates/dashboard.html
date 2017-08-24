@@ -1,105 +1,311 @@
-<div id="other-head">
-	<div id="sub-otherhead">
-    	<div class="other-head">
-        	<h4>Account Overview</h4>
-        </div>
-        <div class="otherborder">
-        	<img src="images/border2.png">
-        </div>
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="static/style/materialize/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="static/style/custom.css">
+	<link rel="stylesheet" type="text/css" href="static/style/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="static/font-awesome/css/font-awesome.min.css">
+	<script type="text/javascript" src="static/javascript/jquery/jquery-3.2.1.js"></script>
+	
+	<title>Fantasy Shopping</title>
+</head>
+<body>
+<div class="navbar-fixed">
+<nav>
+	<div class="nav-wrapper">
+		<div class="container">
+		<a href="#" class="brand-logo">Fantasy Shopping</a>
+		</div>
+	</div>
+</nav>
 </div>
-<div id="main-other">
-	<div id="sub-other">
-    	    <div class="all-information">
-<div class="desh-left">
-        	<div class="deshuser">
-            	<div class="deshup">
-                    <div class="deshicon">
-                    	<img src="images/duser.png">
-                    </div>
-                    <div class="desh-text">
-                    	<div class="desh-head">
-                        	<p>swaibu</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lastaccess">
-               <div class="ac-left">
-               		<p>Registration Date :   </p>
-               </div>
-               <div class="ac-right">
-               		<p>Aug-22-2017</p>
-               </div>	
-            </div>
-            <div class="al">
-            	<div class="alc">
-                	<a href="?a=account" class="a-link">Dashboard</a>
-                </div>
-                <div class="alc">
-                	<a href="?a=logout" class="a-link">Log Out</a>
-                </div>
-            </div>
-            <div class="desh-menu">
-                    <ul>
-                        <li><a href="?a=deposit" class="hoverdesh">Item 1</a></li>
-                        <li><a href="?a=withdraw">Item 2</a></li>
-                        <li><a href="?a=internal_transfer">Item 3</a></li>
-                        <li><a href="?a=deposit_list">Item 4</a></li>
-                        <li><a href="?a=deposit_history">Item 5</a></li>
-                        <li><a href="?a=withdraw_history">Item 6</a></li>
-                        <li><a href="?a=earnings">Item 7</a></li>
-                        <li><a href="?a=referals">Item 8</a></li>
-                        <li><a href="?a=referallinks">Item 9</a></li>
-                        <li><a href="?a=tell_friend">Item 10</a></li>
-                    </ul>
-            </div>
-        </div>
-<div class="desh-right">
-            <div class="information-head">
-                <h5>Dashboard</h5>
-            </div>
+<div class="container">
+		<div class="row" id="bklist_controller">
+			<div class="col s2">
+				<button class="waves-effect waves-light btn" data-target="activityModal">Add shoppinglist</button>
+			</div>	
+			
+
+		</div>
+
+		<div class="card">
+		<div class="row" id="demoArea">
+			
+				<h1>Please select a cart list below!</h1>
+			
+				<div class="col s3">
+
+					
+
+					<div class="col s12" id="actions">
+						<button class="btn col s4" id="add_item" class="waves-effect waves-light btn" data-target="item_model">Add</button>
+						<button class="btn col s4" id="edit_cart_list" class="waves-effect waves-light btn" data-target="editshoppinglist">Edit</button>
+						<button class="btn col s4" id="delete_cart_list">Delete</button>
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s6"><h5>My cart List</h5></div>
+	</div>
+
+	<div class="row" id="shoppinglists">
+
+	</div>
+</div>
 
 
+	<form class="modal" id="activityModal" method="POST">
+		<h4 class="modal-header center">
+			Add cart list
+		</h4>
 
-            <div class="deshbalance">
-            	<div class="balance-one">
-                	<h5 style="text-align:center">More Information </h5>
-            	</div>
-                <div class="invest-details">
-                    <div class="details-invest">
-                        <div class="invest-all">
-                            <div class="invest-one">
-                                <p>Last Access :	 <span>  Aug-22-2017 11:52:35 AM</span></p>
-                            </div>
-                            <div class="invest-one">
-                                <p>Item 1 :	 <span>$<b>0.00</b></span></p>
-                            </div>
-                            <div class="invest-one">
-                                <p>item 2 :	 <span>$<b>0.00</b></span></p>
-                            </div>
-                            <div class="invest-one">
-                                <p>Item 3 :	 <span>$<b>n/a</b></span></p>
-                            </div>
-                            <div class="invest-one">
-                                <p>Item 4 :	 <span>$<b>n/a</b></span></p>
-                            </div>
-                            <div class="maked">
-                            	<a href="?a=deposit" class="a-link">EDIT</a>
-                            </div>
-                            <div class="maked">
-                            	<a href="?a=withdraw" class="a-link">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="main-referbg">
-                    <p>Your Referral Link : <span>https://super-market.biz/?ref=swaibu</span> </p>
-                </div>
-            </div>
+		<div class="modal-content">
+			<div class="input-field">
+				<input type="text" name="name" id="name" class="validate">
+				<label for="name">Name</label>				
+			</div>
 
+			<div class="input-field">
+				<input type="hidden" name="description"></input type="text">
+				<label for="description">Description</label>
+			</div>
 
+			<div class="file-field input-field">
+					
+					<div class="file-path-wrapper">
+					<input class="file-path validate" type="text">
+				</div>
+			</div>
+
+		<div class="input-field">
+			<button class="btn">Add</button>
+		</div>
+		</div>
+	</form>
+
+	<form class="modal" id="editshoppinglist" method="POST">
+		<h4 class="modal-header center">
+			Edit cart list
+		</h4>
+
+		<div class="modal-content">
+			<div class="input-field">
+				<input type="text" name="name" id="name" class="validate">
+				<label for="name">Name</label>				
+			</div>
+
+			<div class="input-field">
+				<input type="text" name="due_age"></input type="text">
+				<label for="description">Description</label>
+			</div>
+
+		<div class="input-field">
+			<button class="btn">Edit</button>
+		</div>
+		</div>
+	</form>
+
+	<form class="modal" id="item_model" method="POST">
+		<h4 class="modal-header center">
+			Add Item
+		</h4>
+
+		<div class="modal-content">
+			<div class="input-field">
+				<input type="text" name="item" id="item_name" class="validate">
+				<label for="name">Name</label>				
+			</div>
+
+		<div class="input-field">
+			<button class="btn">Add</button>
+		</div>
+		</div>
+	</form>
+
+	<form class="modal" id="edit_itm_model" method="POST" data-item=''>
+		<h4 class="modal-header center">
+			Edit Item
+		</h4>
+
+		<div class="modal-content">
+			<div class="input-field">
+				<input type="text" name="new_name" id="edit_name" class="validate">
+				<label for="name">Name</label>				
+			</div>
+
+		<div class="input-field">
+			<button class="btn">Edit</button>
+		</div>
+		</div>
+	</form>
+
+	</div>
 </div>
-</div>
-</div>
-</div>
+
+</body>
+<script type="text/javascript" src="static/style/materialize/js/materialize.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".modal").modal({
+			StartingTop:'5%'
+		});
+
+		$.ajax({
+			"type":"GET",
+			"dataType":"json",
+			"url":"/api/shoppinglists",
+			 success:function(res){
+			 	$.each(res['data'],function(idx,data){
+			 		var elem='<div class="col s3 lst" data-elem="'+data['name']+'"><div class="card bk_card">';
+			 		elem+='<div class="card-image "><img src="static/images/1.jpg"/></div><span class="card-title bk_title">';
+			 		elem+=data["name"];
+			 		elem+='</span><div class="card-content bk-content"></div>'
+			 		elem+='</div></div></div>';
+			 		$("#shoppinglists").append(elem)
+			
+			 	})
+			 }
+		});
+
+		$("#activityModal").submit(function(event){
+			event.preventDefault()
+			data=$(this).serialize()
+			$.ajax({
+				"type":"POST",
+				"dataType":"json",
+				"url":"/api/shoppinglist",
+				"data":data,
+				success:function(res){
+					if(res['status']=="success"){
+						var elem='<div class="col s3 lst" data-elem="'+res['data']+'"><div class="card bk_card">';
+						elem+='<div class="card-image "><img src="static/images/1.jpg"/></div><span class="card-title bk_title">';
+						elem+=res["data"];
+						elem+='</span><div class="card-content bk-content"></div>'
+						elem+='</div></div></div>';
+						$("#shoppinglists").append(elem)
+						alert(res['message'])
+						}else{
+						alert(res['message'])
+					}
+					//alert(JSON.stringify(res))
+				}
+			});
+		});
+
+		$("#item_model").submit(function(event){
+			event.preventDefault()
+			var obj_id=$("#add_item").attr("data-shoppinglist")
+			data=$(this).serialize()
+			$.ajax({
+				"type":"POST",
+				"dataType":"json",
+				"url":"/api/shoppinglistitem/"+obj_id+"/item/add",
+				"data":data,
+				success:function(res){
+					if(res['status']=="success"){
+						var element=$('<div class="item">');
+							element.append("<input type='checkbox' class='genie_check left'/><div class='li_im left'>"+res['data']['name']+"</div><div class='right'><span class='edit_itm right fa fa-pencil' data-elem='"+res['data']['name']+"'></span><span class='delete_item right fa fa-trash' data-elem='"+res['data']['name']+"'></span>");
+							$("#story").append(element)
+					}
+					//alert(JSON.stringify(res))
+				}
+			});
+		});
+
+		$('body').on('click', '.lst', function() {
+			data=$(this).attr('data-elem')
+			$("#add_item").attr("data-shoppinglist",data)
+			$("#edit_cart_list").attr("data-shoppinglist",data)
+			$("#delete_cart_list").attr("data-shoppinglist",data)
+			$("#story").html("")
+			$.ajax({
+					"type":"GET",
+					"dataType":"json",
+					"url":"/api/items/shoppinglist/"+data,
+					success:function(res){
+						$("#closure").hide()
+						if(res['status']=="success"){
+							$.each(res['data'],function(idx,elem1){
+								var element=$('<div class="item">');
+								$("#title").html(data)
+								element.append("<input type='checkbox' class='genie_check left'/><div class='li_im left'>"+elem1['name']+"</div><div class='right'><span class='edit_itm right fa fa-pencil' data-elem='"+elem1['name']+"'></span><span class='delete_item right fa fa-trash' data-elem='"+elem1['name']+"'></span>");
+								$("#story").append(element)
+							})
+						}else{
+							alert(JSON.stringify(res['message']))
+						}
+					}
+				})
+		});
+
+		$('body').on('click', '.edit_itm', function() {
+			$("#edit_itm_model").modal('open')
+			$("#edit_itm_model").attr("data-item",$(this).attr('data-elem'))
+		});
+
+		$('body').on('click', '.delete_item', function() {
+			var obj_id=$("#add_item").attr("data-shoppinglist")
+			var data=$(this).attr("data-elem")
+			$.ajax({
+					"type":"GET",
+					"dataType":"json",
+					"url":"/api/delete/"+obj_id+"/"+data,
+					success:function(res){
+						alert(JSON.stringify(res)+" "+obj_id+" "+data)
+					}
+				})
+		});
+
+		$("#editshoppinglist").submit(function(event){
+			event.preventDefault()
+			var obj_id=$("#add_item").attr("data-shoppinglist")
+			data=$(this).serialize()
+			$.ajax({
+				"type":"POST",
+				"dataType":"json",
+				"url":"/api/shoppinglist/"+obj_id+"/edit",
+				"data":data,
+				success:function(res){
+					alert(res['message'])
+				}
+			})
+		});
+
+		//http://127.0.0.1:5000/api/delete/op/hey1
+
+		$("#edit_itm_model").submit(function(event){
+			event.preventDefault()
+			var obj_id=$("#add_item").attr("data-shoppinglist")
+			var item=$(this).attr("data-item")
+			data=$(this).serialize()
+			$.ajax({
+				"type":"POST",
+				"dataType":"json",
+				"url":"/api/"+obj_id+"/item/"+item+"/edit",
+				"data":data,
+				success:function(res){
+					if(res['status']=="success"){
+						$("#story").html("")
+						$.ajax({
+								"type":"GET",
+								"dataType":"json",
+								"url":"/api/items/shoppinglist/"+obj_id,
+								success:function(res){
+									alert(JSON.stringify(res))
+									$.each(res['data'],function(idx,elem1){
+										var element=$('<div class="item">');
+										element.append("<input type='checkbox' class='genie_check left'/><div class='li_im left'>"+elem1['name']+"</div><div class='right'><span class='edit_itm right fa fa-pencil' data-elem='"+elem1['name']+"'></span><span class='delete_item right fa fa-trash' data-elem='"+elem1['name']+"'></span>");
+										$("#story").append(element)
+									})
+								}
+							})
+					}
+					//alert(JSON.stringify(res))
+				}
+			});
+		});
+	});
+</script>
+</html>
