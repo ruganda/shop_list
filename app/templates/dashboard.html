@@ -7,14 +7,14 @@
 	<link rel="stylesheet" type="text/css" href="static/font-awesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="static/javascript/jquery/jquery-3.2.1.js"></script>
 	
-	<title>Fantasy Shopping</title>
+	<title>ShoppinglistFairy</title>
 </head>
 <body>
 <div class="navbar-fixed">
 <nav>
 	<div class="nav-wrapper">
 		<div class="container">
-		<a href="#" class="brand-logo">Fantasy Shopping</a>
+		<a href="#" class="brand-logo">ShoppinglistFairy</a>
 		</div>
 	</div>
 </nav>
@@ -22,7 +22,7 @@
 <div class="container">
 		<div class="row" id="bklist_controller">
 			<div class="col s2">
-				<button class="waves-effect waves-light btn" data-target="activityModal">Add shoppinglist</button>
+				<button class="waves-effect waves-light btn" data-target="activityModal">Add Shoppinglist</button>
 			</div>	
 			
 
@@ -30,24 +30,32 @@
 
 		<div class="card">
 		<div class="row" id="demoArea">
-			
-				<h1>Please select a cart list below!</h1>
-			
+			<div id="closure">
+				<h1>Please select a shopping list below!</h1>
+			</div>
+				<img src="static/images/1.jpg" class="col s9" id="demoImg"/>
 				<div class="col s3">
 
-					
+					<div class="col s12" id="displayArea">
+						<div id="title">
+							
+						</div>
+						<div id="story">
+
+						</div>
+					</div>
 
 					<div class="col s12" id="actions">
 						<button class="btn col s4" id="add_item" class="waves-effect waves-light btn" data-target="item_model">Add</button>
-						<button class="btn col s4" id="edit_cart_list" class="waves-effect waves-light btn" data-target="editshoppinglist">Edit</button>
-						<button class="btn col s4" id="delete_cart_list">Delete</button>
+						<button class="btn col s4" id="edit_shopping_list" class="waves-effect waves-light btn" data-target="editShoppinglist">Edit</button>
+						<button class="btn col s4" id="delete_shopping_list">Delete</button>
 					</div>
 				</div>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="col s6"><h5>My cart List</h5></div>
+		<div class="col s6"><h5>My Shopping List</h5></div>
 	</div>
 
 	<div class="row" id="shoppinglists">
@@ -58,7 +66,7 @@
 
 	<form class="modal" id="activityModal" method="POST">
 		<h4 class="modal-header center">
-			Add cart list
+			Add Shopping list
 		</h4>
 
 		<div class="modal-content">
@@ -68,12 +76,15 @@
 			</div>
 
 			<div class="input-field">
-				<input type="hidden" name="description"></input type="text">
-				<label for="description">Description</label>
+				<input type="text" name="description"></input type="text">
+				<label for="description"></label>
 			</div>
 
 			<div class="file-field input-field">
-					
+					<div class="btn">
+						  <span>Image</span>
+						  <input type="file" name="dpic">
+					</div>
 					<div class="file-path-wrapper">
 					<input class="file-path validate" type="text">
 				</div>
@@ -85,9 +96,9 @@
 		</div>
 	</form>
 
-	<form class="modal" id="editshoppinglist" method="POST">
+	<form class="modal" id="editShoppinglist" method="POST">
 		<h4 class="modal-header center">
-			Edit cart list
+			Edit Shopping list
 		</h4>
 
 		<div class="modal-content">
@@ -217,8 +228,8 @@
 		$('body').on('click', '.lst', function() {
 			data=$(this).attr('data-elem')
 			$("#add_item").attr("data-shoppinglist",data)
-			$("#edit_cart_list").attr("data-shoppinglist",data)
-			$("#delete_cart_list").attr("data-shoppinglist",data)
+			$("#edit_shopping_list").attr("data-shoppinglist",data)
+			$("#delete_shopping_list").attr("data-shoppinglist",data)
 			$("#story").html("")
 			$.ajax({
 					"type":"GET",
@@ -258,7 +269,7 @@
 				})
 		});
 
-		$("#editshoppinglist").submit(function(event){
+		$("#editShoppinglist").submit(function(event){
 			event.preventDefault()
 			var obj_id=$("#add_item").attr("data-shoppinglist")
 			data=$(this).serialize()

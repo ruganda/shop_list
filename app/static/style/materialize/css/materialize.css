@@ -4,7 +4,7 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 .materialize-red {
-  background-color: #1F1C1C !important;
+  background-color: #e51c23 !important;
 }
 
 .materialize-red-text {
@@ -12,7 +12,7 @@
 }
 
 .materialize-red.lighten-5 {
-  background-color: #584D4E !important;
+  background-color: #fdeaeb !important;
 }
 
 .materialize-red-text.text-lighten-5 {
@@ -232,11 +232,11 @@
 }
 
 .pink-text.text-lighten-2 {
-  color: #7E4558 !important;
+  color: #f06292 !important;
 }
 
 .pink.lighten-1 {
-  background-color: #7C4E5D !important;
+  background-color: #ec407a !important;
 }
 
 .pink-text.text-lighten-1 {
@@ -248,15 +248,15 @@
 }
 
 .pink-text.text-darken-1 {
-  color: #6E3449 !important;
+  color: #d81b60 !important;
 }
 
 .pink.darken-2 {
-  background-color: #5C132F !important;
+  background-color: #c2185b !important;
 }
 
 .pink-text.text-darken-2 {
-  color: #572D3D !important;
+  color: #c2185b !important;
 }
 
 .pink.darken-3 {
@@ -264,15 +264,15 @@
 }
 
 .pink-text.text-darken-3 {
-  color: #2D1620 !important;
+  color: #ad1457 !important;
 }
 
 .pink.darken-4 {
-  background-color: #28101D !important;
+  background-color: #880e4f !important;
 }
 
 .pink-text.text-darken-4 {
-  color: #8E4B6F !important;
+  color: #880e4f !important;
 }
 
 .pink.accent-1 {
@@ -292,23 +292,23 @@
 }
 
 .pink.accent-3 {
-  background-color: #30151F !important;
+  background-color: #f50057 !important;
 }
 
 .pink-text.text-accent-3 {
-  color: #53343F !important;
+  color: #f50057 !important;
 }
 
 .pink.accent-4 {
-  background-color: #1A0911 !important;
+  background-color: #c51162 !important;
 }
 
 .pink-text.text-accent-4 {
-  color: #250E18 !important;
+  color: #c51162 !important;
 }
 
 .purple {
-  background-color: #3C0546 !important;
+  background-color: #9c27b0 !important;
 }
 
 .purple-text {
