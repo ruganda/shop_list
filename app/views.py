@@ -1,6 +1,6 @@
 from flask import render_template, jsonify, request
 from app import app
-from app.models.user import User
+from app.models import user
 
 """Views defines routes to be called by the client. These rotutes return json data to be consumed by a client. For storing the data 
 	during the life time of the application, I am using a super global current user to store an instance of the user class objet
@@ -27,7 +27,7 @@ def register():
 	email=request.form['email']
 	password=request.form['password']
 	global current_user
-	current_user= User(first_name,last_name,email,password)
+	current_user=user.User(first_name,last_name,email,password)
 	return jsonify({'status':"success","message":"User registration successful","name":current_user.name,"email":current_user.email})
 
 @app.route("/api/login",methods=['POST'])
@@ -47,22 +47,22 @@ def login():
 def add_shoppinglist():
 	"""Add a user's shoppinglist"""
 	name=request.form['name']
-	itemnumber=request.form['description']
+	Items=request.form['description']
 	global current_user
-	current_user.add_shoppinglist(name,itemnumber)
+	current_user.add_shoppinglist(name,Items)
 	shoppinglist=current_user.view_shoppinglist(name)
-	return jsonify({"status":"success","message":"shoppinglist added successfully","data":name})
+	return jsonify({"status":"success","message":"Shoppinglist added successfully","data":name})
 
 @app.route("/api/shoppinglistitem/<string:shoppinglist>/item/add",methods=['POST'])
 def add_item(shoppinglist):
-	"""This adds an Item to the cart list and returns a JSON string with the ppropriate status"""
+	"""This adds an Item to the shopping list and returns a JSON string with the ppropriate status"""
 	global current_user
 	item=request.form['item']
 	item=current_user.add_shoppinglist_item(shoppinglist,item)
 	if item !=False:
-		return jsonify({"status":"success","message":"shoppinglist item added succcessfully","data":item})
+		return jsonify({"status":"success","message":"Shoppinglist item added succcessfully","data":item})
 	else:
-		return jsonify({"status":"failed","message":"shoppinglist item not added"})
+		return jsonify({"status":"failed","message":"Shoppinglist item not added"})
 
 @app.route('/api/<string:shoppinglist>/item/<string:item>/edit',methods=['POST'])
 def edit_item(shoppinglist,item):
@@ -76,13 +76,13 @@ def edit_item(shoppinglist,item):
 		return jsonify({"status":"failed","message":"Item failed to edit"})
 
 @app.route("/api/shoppinglists")
-def view_carts():
+def view_shoppings():
 	global current_user
 	shoppinglists=[]
 
-	carts=current_user.view_shoppinglist()
-	for cart in carts:
-		shoppinglists.append(current_user.view_shoppinglist(cart))
+	shoppings=current_user.view_shoppinglist()
+	for shopping in shoppings:
+		shoppinglists.append(current_user.view_shoppinglist(shopping))
 	return jsonify({"status":"success","data":shoppinglists})
 
 @app.route("/api/shoppinglist/<string:shoppinglist>/edit",methods=['POST'])
@@ -90,32 +90,32 @@ def edit_shoppinglist(shoppinglist):
 	global current_user
 	if shoppinglist in current_user.shoppinglists:
 		name=request.form['name']
-		itemnumber=request.form['name']
-		example=current_user.shoppinglists[shoppinglist].edit(name,itemnumber)
+		Items=request.form['name']
+		example=current_user.shoppinglists[shoppinglist].edit(name,Items)
 		if example:
 			tmp=current_user.shoppinglists[shoppinglist]
 			del current_user.shoppinglists[shoppinglist]
 			current_user.shoppinglists[name]=tmp
-			return jsonify({'status':'success','message':'shoppinglist edited successfully'})
+			return jsonify({'status':'success','message':'Shoppinglist edited successfully'})
 		else:
-			return jsonify({'status':'fail','message':'shoppinglist not edited'})
+			return jsonify({'status':'fail','message':'Shoppinglist not edited'})
 	else:
-		return jsonify({'status':'fail','message':'shoppinglist not edited'})
+		return jsonify({'status':'fail','message':'Shoppinglist not edited'})
 
-@app.route("/api/shoppinglist/<string:cartname>")
-def view_cart(cartname):
+@app.route("/api/shoppinglist/<string:shoppingname>")
+def view_shopping(shoppingname):
 	global current_user
-	resp=current_user.view_shoppinglist(cartname)
+	resp=current_user.view_shoppinglist(shoppingname)
 
 	if resp:
 		return jsonify([{"status":"success","data":resp}])
 	else:
-		return jsonify({"status":"failed","message":"shoppinglist does not exist"})		
+		return jsonify({"status":"failed","message":"Shoppinglist does not exist"})		
 
 @app.route("/api/items/shoppinglist/<string:shoppinglist>",methods=['GET'])
 def view_shoppinglist_item(shoppinglist):
 	global current_user
-	shoppinglist_items=current_user.view_cart_list_item(shoppinglist)
+	shoppinglist_items=current_user.view_shopping_list_item(shoppinglist)
 	if shoppinglist_items:
 		list_items=[]
 		for item in shoppinglist_items:
@@ -128,7 +128,7 @@ def view_shoppinglist_item(shoppinglist):
 @app.route("/api/item/<string:shoppinglist>/<string:item_name>")
 def view_items(shoppinglist,item_name):
 	global current_user
-	shoppinglist_item=current_user.view_cart_list_item(shoppinglist,item_name)
+	shoppinglist_item=current_user.view_shopping_list_item(shoppinglist,item_name)
 	if shoppinglist_item:
 		list_items=[]
 		list_items.append(shoppinglist_item[0].show_info())
